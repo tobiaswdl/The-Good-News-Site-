@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Here start with Header and Nav Bar */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 2rem;
+    padding-right: 2rem;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: purple;
+    font-weight: bold;
+    position: relative;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+.nav-bar a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: purple;
+    transition: width 0.3s;
+}
+
+.nav-bar a:hover::after {
+    width: 100%;
+}
+
+/* Here start with Top News of the Week*/
+
+.top-news-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-image: url("/Users/tobiaswedel/Desktop/Code/Coding/Website/News Page /Top_news_Dog_Pic.jpg");
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 2rem;
+}
+
+.top-news-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1rem 2rem; 
+    border-radius: 10px;
+    text-align: left;
+    max-width: 500px;
+}
+
+
+.top-news-infos-div {
+    display: flex;
+    gap: 1.5rem;
+    position:absolute;
+    bottom: 1rem;
+    left: 2rem;
+    right: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem ;
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
+    overflow-x: auto; /* nachschauen!!!*/
+}
+
+.number-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0078d7;
+    margin-top: 0.5rem;
+}
+
+#top-news-h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.top-news-info-text {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 10px;
+    font-size: 1.25rem;
+}
+
+.read-story-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(90, 129, 90, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.read-story-btn:hover {   /*made with AI*/
+    background-color: rgba(144, 207, 144, 0.8);
+}
+
+/* Here start with top Stories different categories*/
+
+/* FOr the Heading */
+#top-stories-id {
+    padding-top: 3rem;
+    padding-left: 4rem;
+    padding-bottom: 1.5rem;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+}
+
+#top-stories-id::before {  /*made with AI*/
+    content:'';
+    display: inline-block;
+    width: 4px;
+    height: 2rem;
+    background-color: black;
+    margin-right: 0.5rem;
+}
+
+.top-stories-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.stories-collection {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 2rem 0;
+    overflow-x: auto; /*nachschauen was bedeutet*/
+}
+
+/*Sets the background for all the top stories*/
+.background {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px whitesmoke;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*Wrapper for the H4*/
+.Animal div, 
+.Education div,
+.Human div,
+.Enviroment div, 
+.Conflict div {
+    background-color: rgba(214, 214, 214, 0.8);
+    padding: 2px;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 12rem;
+    border-radius: 10px;
+}
+
+/* Stores the background Images*/
+.Education {
+    background-image: url("Education_news_pic.jpg");
+}
+
+.Animal {
+    background-image: url("animal_news_pic.jpg");
+}
+
+.Human {
+    background-image: url("human_news_pic.jpg");
+}
+
+.Enviroment {
+    background-image: url("Environment_new_pic.jpg")
+}
+
+.Conflict {
+    background-image: url("conflict_news_pic 19.00.23.jpg")
+}
