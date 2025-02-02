@@ -227,3 +227,13 @@
 .Conflict {
     background-image: url("conflict_news_pic 19.00.23.jpg")
 }
+
+/* Here begins Bottom page informations*/
+
+.Bottom-information{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: pink;
+}
