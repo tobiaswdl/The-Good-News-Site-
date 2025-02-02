@@ -59,6 +59,7 @@
     align-items: flex-start;
     justify-content: space-between;
     background-image: url("/Users/tobiaswedel/Desktop/Code/Coding/Website/News Page /Top_news_Dog_Pic.jpg");
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 600px;
     background-size: cover;
@@ -159,6 +160,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    padding-top: 4rem;
 }
 
 .stories-collection {
@@ -171,6 +173,8 @@
     margin: 0 auto;
     padding: 2rem 0;
     overflow-x: auto; /*nachschauen was bedeutet*/
+    background-color: rgba(214, 214, 214, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /*Sets the background for all the top stories*/
@@ -231,62 +235,86 @@
 /* Here begins Bottom page informations*/
 
 .Bottom-content-container{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    padding: 1.5rem 1rem;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
+    padding-top: 6rem;
 }
 
+/*Left Column stylling*/
 .stories-from-interest-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 3rem;
-    padding: 2rem;
-    overflow-x: scroll;
+    gap: 1rem;
+    padding-left: 3rem;
 }
 
+/*right column styling */
+
+.Right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 2rem;
+    align-items: flex-end;
+    padding-right: 3rem;
+}
+
+/*From your INterest */
 .storie-div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 1rem;
-    margin: 0 auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 150px;
-    max-width: 44rem;
+    height: 200px;
+    max-width: 52rem;
     overflow: hidden;
+}
+
+#from-your-interest-id {
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+}
+#from-your-interest-id::before {
+    content:'';
+    display: inline-block;
+    width: 4px;
+    height: 2rem;
+    background-color: black;
+    margin-right: 0.5rem;
 }
 
 .Storie-1-picture, 
 .Storie-2-picture,
 .Storie-3-picture,
 .Storie-4-picture {
-    width: 120px; 
-    height: 120px;
+    width: 150px; 
+    height: 150px;
     background-size: cover;
     background-position: center;
     margin-right: 1rem;
     border-radius: 10px;
     flex-shrink: 0;
+    align-items: center;
 }
 
 .storie-text-wrapper {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
     overflow: hidden;  /* Look this and the following up*/
     white-space: nowrap;  
     text-overflow: ellipsis;
 }
 
 .storie-text-wrapper h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
     white-space: nowrap;
@@ -295,7 +323,7 @@
 }
 
 .storie-text-wrapper p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #555;
     margin: 0;
     line-height: 1.2;
@@ -305,13 +333,72 @@
 }
 
 .storie-text-wrapper h4 {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: inline-block;
+    align-self: baseline;
+    background-color:rgba(214, 214, 214, 0.2) ;
 }
 
+/*From your Region and Videos*/
 
 
+.stories-from-region-container,
+.Popular-videos-container {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.stories-from-region-container{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem
+}
+
+.region-news {
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.3rem;
+    gap: 1rem;
+}
+
+.region-news-h2, .popular-videos-h2 {
+    align-items: flex-start;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    padding-right: 16rem;
+}
+
+.region-news-h2::before, .popular-videos-h2::before {
+    content:'';
+    display: inline-block;
+    width: 4px;
+    height: 2rem;
+    background-color: black;
+    margin-right: 0.5rem;
+}
+
+.region-news h3 {
+    font-size: small;
+}
+
+.region-news p {
+    font-weight: bold;
+}
+.Popular.videos-container video {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
