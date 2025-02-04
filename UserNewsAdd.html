@@ -23,19 +23,26 @@
         </header>
     
         <main>
-            <div class="Heading_h2">
-                <h2>Create Content</h2>
+            <div class="usb">
+                <h2>Create Post</h2>
             </div>
-
-            <div class="Heading_h3">
-                <h3>Title of Post</h3>
+            <div class="form">           <!--Here Comes Form for TItle-->
+                <form action="/example.html" method="POST">
+                    <label for="Title">Title of the Post</label>
+                    <br>
+                    <input type="text" name="title_of_post" id="Title">
+                    <br>
+                <!--Here comes the Form for the Content-->
+                    <label for="content">Create Content</label>
+                    <br>
+                    <textarea id="content" name="content" rows="10" cols="50">
+                    </textarea>
+                    <!-- Here COmes Submit Button-->
+                    <input type="submit" value="Send">
+                </form>
             </div>
-            <!--Here Comes Form for TItle-->
-
-            <div class="Heading_h3">
-                <h3>Content</h3>
-            </div>
-            <!--Here comes the Form for the Content-->
-
+            
+             
+           
             <!-- Maybe add Name Date Verification something -->
         </main>
