@@ -5,7 +5,7 @@ const path = require('path');
 const server = http.createServer((req, res) => {
     console.log('Request made:', req.url);
 
-    let filePath = './views';
+    let filePath = './Views';
     
     switch(req.url) {
         case '/':
@@ -16,16 +16,20 @@ const server = http.createServer((req, res) => {
             filePath += '/Impressum.html';
             res.statusCode = 200;
             break;
-        case '/log-in':
+        case '/logIn.html':
             filePath += '/logIn.html';
             res.statusCode = 200;
             break;
-        case '/Headlinestory':
+        case '/HeadLineStory.html':
             filePath += '/HeadLineStory.html';
             res.statusCode = 200;
             break;
-        case '/User-News-Added':
-            filePath += '/UserNewsAdded.html';
+        case '/UserNewsAdd.html':
+            filePath += '/UserNewsAdd.html';
+            res.statusCode = 200;
+            break;
+        case '/HomePage.html':
+            filePath += '/HomePage.html';
             res.statusCode = 200;
             break;
         default: 
