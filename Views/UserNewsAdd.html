@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../stylesheet.css" rel="stylesheet">
+        <link href="/styles/stylesheet.css" rel="stylesheet">
         <title>Head Line Story</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     </head>
 
 
@@ -27,18 +30,21 @@
                 <h2>Create Post</h2>
             </div>
             <div class="form">           <!--Here Comes Form for TItle-->
-                <form action="/example.html" method="POST">
-                    <label for="Title">Title of the Post</label>
-                    <br>
-                    <input type="text" name="title_of_post" id="Title">
-                    <br>
+                <form action="/UserNews" method="POST">
+                    <p>
+                        <label for="Title">Title of the Post</label>
+                        <input type="text" name="title_of_post" id="Title" required>
+                    </p>
                 <!--Here comes the Form for the Content-->
-                    <label for="content">Create Content</label>
-                    <br>
-                    <textarea id="content" name="content" rows="10" cols="50">
-                    </textarea>
+                    <p>
+                        <label for="content">Create Content</label>
+                        <textarea id="content" name="content" rows="10" cols="50" required>
+                        </textarea>
+                    </p>
+                    <p>
                     <!-- Here COmes Submit Button-->
-                    <input type="submit" value="Send">
+                        <button type="submit">Send your Article</button>
+                    </p>
                 </form>
             </div>
             
@@ -46,3 +52,5 @@
            
             <!-- Maybe add Name Date Verification something -->
         </main>
+    </body>
+</html>

@@ -58,7 +58,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    background-image: url("/Users/tobiaswedel/Desktop/Code/Coding/Website/News Page /Top_news_Dog_Pic.jpg");
+    background-image: url("/images/Top_news_Dog_Pic.jpg");
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 600px;
@@ -213,23 +213,23 @@
 
 /* Stores the background Images*/
 .Education {
-    background-image: url("Education_news_pic.jpg");
+    background-image: url("/images/Education_news_pic.jpg");
 }
 
 .Animal {
-    background-image: url("animal_news_pic.jpg");
+    background-image: url("/images/animal_news_pic.jpg");
 }
 
 .Human {
-    background-image: url("human_news_pic.jpg");
+    background-image: url("/images/human_news_pic.jpg");
 }
 
 .Enviroment {
-    background-image: url("Environment_new_pic.jpg")
+    background-image: url("/images/Environment_new_pic.jpg")
 }
 
 .Conflict {
-    background-image: url("conflict_news_pic 19.00.23.jpg")
+    background-image: url("/images/conflict_news_pic 19.00.23.jpg")
 }
 
 /* Here begins Bottom page informations*/
@@ -464,14 +464,14 @@ h2 {
 }
 
 #pic_1 {
-    background-image: url("Astronaut Space Galaxy.jpg");
+    background-image: url("/images/Astronaut Space Galaxy.jpg");
     padding-left: 3rem;
     padding-right: 3rem;
 }
 
 
 #pic_2 {
-    background-image: url("Education_news_pic.jpg");
+    background-image: url("/images/Education_news_pic.jpg");
 }
 
 .heading_h2 {

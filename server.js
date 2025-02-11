@@ -1,58 +1,54 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
 const path = require('path');
 
-const server = http.createServer((req, res) => {
-    console.log('Request made:', req.url);
+const app = express();
+app.set('view engine', 'ejs');
 
-    let filePath = './Views';
-    
-    switch(req.url) {
-        case '/':
-            filePath += '/HomePage.html';
-            res.statusCode = 200;
-            break;
-        case '/Impressum':
-            filePath += '/Impressum.html';
-            res.statusCode = 200;
-            break;
-        case '/logIn.html':
-            filePath += '/logIn.html';
-            res.statusCode = 200;
-            break;
-        case '/HeadLineStory.html':
-            filePath += '/HeadLineStory.html';
-            res.statusCode = 200;
-            break;
-        case '/UserNewsAdd.html':
-            filePath += '/UserNewsAdd.html';
-            res.statusCode = 200;
-            break;
-        case '/HomePage.html':
-            filePath += '/HomePage.html';
-            res.statusCode = 200;
-            break;
-        default: 
-            filePath += '/404.html'; 
-            res.statusCode = 404;
-            break;
-    }
+// Middleware to parse form data
+app.use(express.urlencoded({ extended: true}));
 
+// Static CSS and Image files 
+app.use(express.static(path.join(__dirname, 'public')));
 
-    res.setHeader('Content-Type', 'text/html');
+// Static HTML File 
+app.use(express.static(path.join(__dirname, 'Views')));
 
+// Dynamic Routing 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Views', 'HomePage.html'));
+});
 
-    fs.readFile(filePath, (err, data) => {
-        if (err) {
-            console.log(err);
-            res.end('Error loading page');
-        } else {
-            res.end(data);
-        }
-    });
+app.get('/Impressum', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Views', 'Impressum.html'));
+});
+
+app.get('/logIn', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Views', 'logIn.html'));
+});
+
+app.get('/HeadLineStory', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Views', 'HeadLineStory.html'));
+});
+
+app.get('/UserNewsAdd', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Views', 'UserNewsAdd.html'));
+});
+
+// form page redirecting to User news page 
+
+app.post('/UserNews', (req, res) => {
+    console.log(req.body.title_of_post, req.body.content);
+    res.sendFile(path.join(__dirname, 'Views', 'UserNews.html'));
+});
+
+// 404 routes 
+app.use((requ, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'Views', '404.html'));
 });
 
 
-server.listen(3000, 'localhost', () => {
-    console.log('Listening for requests on port 3000');
+//Start the server 
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
