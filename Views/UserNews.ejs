@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/styles/stylesheet.css" rel="stylesheet">
+        <title>News from the Users</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/styles/stylesheet.css" rel="stylesheet">
+        <style>
+            /* Additional styles for this demo page */
+            .filter-buttons {
+              margin: 1rem 0;
+              text-align: center;
+            }
+            .filter-buttons button {
+              margin: 0 0.5rem;
+              padding: 0.5rem 1rem;
+              font-size: 1rem;
+              border: none;
+              background-color: purple;
+              color: white;
+              cursor: pointer;
+              border-radius: 5px;
+            }
+            .filter-buttons button.active {
+              background-color: darkmagenta;
+            }
+            .news-list {
+              list-style: none;
+              padding: 0;
+              margin: 1rem;
+            }
+            .news-item {
+              margin-bottom: 1rem;
+              padding: 1rem;
+              background: #f9f9f9;
+              border: 1px solid #ddd;
+              border-radius: 10px;
+            }
+            .news-item h3 {
+              margin: 0 0 0.5rem 0;
+            }
+            .news-item p {
+              margin: 0;
+            }
+          </style>
+    
+    </head>
+    <body>
+            <!-- Header Section to store Logo, Nav bar and Log In -->
+            <header class="header">
+                <div class="logo">
+                    <h1 id="heading-h1">The Good News Page</h1>
+                </div>
+                <nav class="nav-bar">
+                    <a href="/UserNews">User News</a>
+                    <a href="#latest-news">Latest News</a>
+                    <a href="#top-stories-id">Top Stories</a>
+                    <a href="#from-your-interest-id">From your Interests</a>
+                    <a href="/logIn">Log In</a>
+                    <a href="/UserNewsAdd">Add News</a>
+                </nav>
+            </header>
+        <main>
+            <!-- Styling has to be made, but as this page is gonna be deleted anyway I wont spend time on it -->
+            <h1 style="text-align: center;">News from the Users</h1>
+            <ul class="news-list">
+              <% blocks.forEach(block => { %>
+                <li class="news-item">
+                  <a href="/UserNews/<%= block._id %>">
+                    <h3><%= block.title %></h3>
+                  </a>
+                </li>
+              <% }) %>
+            </ul>
+        
+              <!-- Client Side Rendering Example-->
+
+            <h1 style="text-align: center;">Client-Side News Filter</h1>
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+            <button data-category="all" class="active">All</button>
+            <button data-category="Education">Education</button>
+            <button data-category="Animal">Animal</button>
+            <button data-category="Human">Human</button>
+            <button data-category="Environment">Environment</button>
+            <button data-category="Conflict">Conflict</button>
+            </div>
+
+            <!-- News Items Container -->
+            <ul class="news-list" id="newsList">
+            <!-- News items will be placed here by JavaScript -->
+            </ul>
+        </main>
+        <script>
+            // Example new data araray
+            const newsData = [
+                { id: 1, title: "New Education Policy Announced", category: "Education", text: "The government has introduced a new policy for educational reform." },
+                { id: 2, title: "Rare Animal Sighting in the Wild", category: "Animal", text: "Local residents report a rare animal sighting near the forest." },
+                { id: 3, title: "Community Event Unites Local Residents", category: "Human", text: "A local event has brought the community together in a heartwarming display of unity." },
+                { id: 4, title: "Environmental Initiative Gains Momentum", category: "Environment", text: "A new initiative to clean up the city has been launched by local activists." },
+                { id: 5, title: "Conflict Resolved After Long Negotiations", category: "Conflict", text: "After weeks of intense negotiations, a long-standing conflict has finally been resolved." }
+            ];
+            const newsList = document.getElementById('newsList');
+            const buttons = document.querySelectorAll('.filter-buttons button');
+
+            function renderNews(filterCategory = 'all') {
+                // Clear the current list
+                newsList.innerHTML = '';
+
+                // Filter NewsItems based on the selected category
+                const filteredNews = filterCategory === 'all'
+                    ? newsData
+                    : newsData.filter(item => item.category === filterCategory);
+
+                // Create List Items for each news item that is filtered     
+                filteredNews.forEach(item => {
+                    const li = document.createElement('li');
+                    li.classList.add('news-item');
+                    li.innerHTML = `
+                    <h3>${item.title}</h3>
+                    <p>${item.text}</p>
+                    `;
+                    newsList.appendChild(li);
+                });
+            }
+            // Rendering of all new NEws 
+            renderNews();
+
+            // Adding click evets for the filter buttons 
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    //Remove active class from buttons 
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    // addding class to the clicked button 
+                    button.classList.add('active');
+                    // Getting the categroigny from the button's data atrrbitue 
+                    const category = button.getAttribute('data-category');
+                    // render news item based on the category 
+                    renderNews(category);
+                });
+            });
+        </script>
+    </body>
+</html>

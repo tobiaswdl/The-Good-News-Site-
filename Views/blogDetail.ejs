@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= block.title %> | The Good News Page</title>
+  <link href="/styles/stylesheet.css" rel="stylesheet">
+  <style>
+    /* Additional inline styles for the blog detail page */
+    .blog-detail-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .blog-detail-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .blog-detail-container p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: purple;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .back-button:hover {
+      background-color: darkmagenta;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo">
+        <h1 id="heading-h1">The Good News Page</h1>
+    </div>
+    <nav class="nav-bar">
+        <a href="/UserNews">User News</a>
+        <a href="#latest-news">Latest News</a>
+        <a href="#top-stories-id">Top Stories</a>
+        <a href="#from-your-interest-id">From your Interests</a>
+        <a href="/logIn">Log In</a>
+        <a href="/UserNewsAdd">Add News</a>
+    </nav>
+</header>
+  <main>
+    <div class="blog-detail-container">
+      <h1><%= block.title %></h1>
+      <p><%= block.text %></p>
+      <!-- Back Button -->
+      <a class="back-button" href="javascript:history.back()">← Back</a>
+    </div>
+  </main>
+</body>
+</html>

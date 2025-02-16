@@ -20,6 +20,8 @@
   "homepage": "https://github.com/tobiaswdl/The-Good-News-Site-#readme",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.1"
   }
 }
