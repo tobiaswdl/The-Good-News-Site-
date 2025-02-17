@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-require('dotenv').config({ path: './logInData.env'});
+require('dotenv').config();
 const { connectToDb } = require('./db');
 const mongoose = require('mongoose');
 const app = express();
@@ -49,10 +49,18 @@ module.exports = app;
 // Start the Server 
 if (process.env.NODE_ENV !== 'test') {
     connectToDb((err) => {
-        if(!err) {
-            app.listen(3000, () => {
-                console.log(`Server is running on http://localhost:${process.env.PORT}`)
-            })
-        }
-    })
-}
+      if (err) {
+
+        console.error('Database connection failed:', err);
+ 
+        process.exit(1);
+      } else {
+        // Only start the server if DB connected
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+          console.log(`Server running on port ${PORT}`);
+        });
+      }
+    });
+  }
+  
