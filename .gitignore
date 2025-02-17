@@ -1,7 +1,7 @@
 .node_modules
 node_modules/
 .log
-.emv
+logInData.env
 .DS_Store
 DS_Store/
 test-results/

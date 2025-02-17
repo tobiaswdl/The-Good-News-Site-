@@ -30,28 +30,27 @@
             <div class="usb">
                 <h2>Create Post</h2>
             </div>
-            <div class="form">           <!--Here Comes Form for TItle-->
+            <div class="form">          
                 <form action="/UserNews" method="POST">
                     <p>
                         <label for="Title">Title of the Post</label>
                         <input type="text" name="title_of_post" id="Title" required>
                     </p>
-                <!--Here comes the Form for the Content-->
                     <p>
                         <label for="content">Create Content</label>
                         <textarea id="content" name="content" rows="10" cols="50" required>
                         </textarea>
                     </p>
                     <p>
-                    <!-- Here COmes Submit Button-->
+                        <label for="auth">Secret Code:</label>
+                        <input type="password" name="auth" id="auth" required>
+                    </p>
+                    <p>
                         <button type="submit">Send your Article</button>
                     </p>
                 </form>
             </div>
             
-             
-           
-            <!-- Maybe add Name Date Verification something -->
         </main>
     </body>
 </html>
