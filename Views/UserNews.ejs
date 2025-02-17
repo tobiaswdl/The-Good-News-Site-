@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/styles/stylesheet.css" rel="stylesheet">
         <style>
-            /* Additional styles for this demo page */
+            /* Additional styles */
             .filter-buttons {
               margin: 1rem 0;
               text-align: center;
@@ -48,18 +48,8 @@
     </head>
     <body>
             <!-- Header Section to store Logo, Nav bar and Log In -->
-            <header class="header">
-                <div class="logo">
-                    <h1 id="heading-h1">The Good News Page</h1>
-                </div>
-                <nav class="nav-bar">
-                    <a href="/UserNews">User News</a>
-                    <a href="#latest-news">Latest News</a>
-                    <a href="#top-stories-id">Top Stories</a>
-                    <a href="#from-your-interest-id">From your Interests</a>
-                    <a href="/logIn">Log In</a>
-                    <a href="/UserNewsAdd">Add News</a>
-                </nav>
+            <header>
+                <%- include('partials/header') %>
             </header>
         <main>
             <!-- Styling has to be made, but as this page is gonna be deleted anyway I wont spend time on it -->
