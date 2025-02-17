@@ -3,7 +3,7 @@ const Block = require("../models/Block");
 exports.getAllBlocks = async (req, res) => {
     try {
         const blocks = await Block.find().sort({ title: 1 });
-        res.render('UserNews', { blocks});
+        res.render('UserNews', { blocks });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error retrieving user news');

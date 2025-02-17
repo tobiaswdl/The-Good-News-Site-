@@ -11,15 +11,6 @@ const userNewsRoutes = require('./routes/userNewsRoutes');
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-// Connect to DB and start server
-const PORT = 3000;
-connectToDb((err) => {
-    if (!err) {
-        app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-        });
-    }
-});
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -52,4 +43,16 @@ app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'Views', '404.html'));
   });
 
+// Export for testing
+module.exports = app;
 
+// Start the Server 
+if (process.env.NODE_ENV !== 'test') {
+    connectToDb((err) => {
+        if(!err) {
+            app.listen(3000, () => {
+                console.log(`Server is running on http://localhost:${process.env.PORT}`)
+            })
+        }
+    })
+}
