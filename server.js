@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/logIn', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Views', 'logIn.html'));
+  res.sendFile(path.join(__dirname, 'views', 'logIn.html'));
 });
 
 app.get('/HeadLineStory', (req, res) => {
@@ -33,14 +33,14 @@ app.get('/UserNewsAdd', (req, res) => {
 });
 
 app.get('/Impresum', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Views', 'Impresum.html'));
+    res.sendFile(path.join(__dirname, 'views', 'Impresum.html'));
   });
 
 app.use('/UserNews', userNewsRoutes);
 
 // 404 route
 app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'Views', '404.html'));
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
   });
 
 // Export for testing
