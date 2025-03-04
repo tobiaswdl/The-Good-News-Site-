@@ -6,7 +6,6 @@ TheGoodNews is a simple website that only shows you the good news happening ever
 
 - **Positive News Only:** Aggregates and displays only uplifting and positive news stories.
 - **Simple Design:** A clean, minimal interface designed to let good news take center stage.
-- **Daily Updates:** Refresh the page daily to discover the latest good news from around the globe.
 
 ## Technologies Used
 
@@ -53,7 +52,7 @@ To run the website locally:
     npm start
 
   4. **Open the Website:**
-     Open your Browser and navigate to http://localhost:300
+     Open your Browser and navigate to http://localhost:3000
      or the port specified in your project.
 
 ## Contributing 
