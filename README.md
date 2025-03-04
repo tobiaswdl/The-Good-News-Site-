@@ -11,7 +11,8 @@ TheGoodNews is a simple website that only shows you the good news happening ever
 ## Technologies Used
 
 ### Front End
-- HTML5 & CSS3
+- HTML
+- CSS
 - JavaScript
 
 ### Back End
