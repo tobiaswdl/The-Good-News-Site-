@@ -19,7 +19,20 @@ TheGoodNews is a simple website that only shows you the good news happening ever
 - Node.js
 - Express
 
-*Feel free to extend or modify the site by adding other libraries or frameworks as needed.*
+
+### Environment Variables
+
+Create a `.env` file in the root directory and add the following variables:
+
+- SUBMIT_SECRET_CODE=YourSecretCodeHere
+- MONGODB_URI=YourMongoDBConnectionString
+- PORT=3000
+
+### Prerequisites
+
+- [MongoDB](https://www.mongodb.com/try/download/community)
+– Ensure you have MongoDB installed and running locally, or update the `MONGODB_URI` in your `.env` file to point to your remote MongoDB instance.
+
 
 ## Installation
 
